@@ -9,18 +9,19 @@ export enum WorkflowStage {
   MOU_SIGN = "MOU SIGN",
   LOCATION_CHANGE = "LOCATION CHANGE",
   INTEGRATION = "INTEGRATION",
+  TRAINING_PENDING = "TRAINING PENDING",
   OUTLET_LIVE = "OUTLET LIVE"
 }
+
+export type City = "BANGLORE" | "Chennai" | "Pune" | "Ahmedabad" | "HYDERABAD" | "MUMBAI";
 
 export interface Outlet {
   id: string;
   name: string;
+  city: City;
   description: string;
-  brand: string;
-  requestedBy: string;
   stage: WorkflowStage;
   timestamp: number;
-  priority: 'low' | 'medium' | 'high';
 }
 
 export interface StageConfig {
